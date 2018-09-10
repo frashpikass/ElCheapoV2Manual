@@ -75,14 +75,6 @@
 					<li>
 						<i>.sav</i> files, for common savefiles to be loaded to the SRAM.
 					</li>
-					<li>
-						<i>.rtc</i> files, to simulate internal clock status (used by ROMs like Pok&eacute;mon Gold/Silver).
-						<b>!NEEDS FACT-CHECKING!</b>
-					</li>
-					<li>
-						<i>.state</i> files, to store a full memory state dump (incompatible with some ROMs, including LSDj).
-						<b>!NEEDS FACT-CHECKING!</b>
-					</li>
 				</ul>
 			</p>
 		</li>
@@ -121,7 +113,7 @@
 	<p>
 		Compatibility problems with Game Boy Advance and Game Boy Color revision 3 have been fixed since ElCheapo v2.2.
 		<br>
-		You can update your ElCheapo hardware for free (shipment cost excluded) by <a href="#chapter7">sending it to Ben Grimmett</a>.
+		You can update your ElCheapo hardware for free (shipping cost excluded) by <a href="#chapter7">sending it to Ben Grimmett</a>.
 	</p>
 </div>
 
@@ -203,7 +195,7 @@
 							<li><b>D-PAD</b> is used to select a directory.</li>
 							<li><b>A</b> opens the selected directory.</li>
 							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 					</p>
 				</li>
@@ -211,13 +203,13 @@
 				<li>
 					<h4><a name="chapter4-2-2">GB ROM</a></h4>
 					<p>
-						Allows to flash a Game Boy ROM image (a <i>.gb</i> file) from the ones available in the currently selected directory. <b>!NEEDS FACT-CHECKING!</b>
+						Allows to flash a Game Boy ROM image (a <i>.gb</i> file) from the ones available in the currently selected directory.
 
 						<ul>
 							<li><b>D-PAD</b> is used to select a ROM image.</li>
 							<li><b>A</b> overwrites the flash memory with the selected ROM image.</li>
 							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 					</p>
 				</li>
@@ -225,13 +217,13 @@
 				<li>
 					<h4><a name="chapter4-2-3">GBC ROM</a></h4>
 					<p>
-						Allows to flash a Game Boy Color ROM image (a <i>.gbc</i> file) from the ones available in the currently selected directory. <b>!NEEDS FACT-CHECKING!</b>
+						Allows to flash a Game Boy Color ROM image (a <i>.gbc</i> file) from the ones available in the currently selected directory.
 
 						<ul>
 							<li><b>D-PAD</b> is used to select a ROM image.</li>
 							<li><b>A</b> overwrites the flash memory with the selected ROM image.</li>
 							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 					</p>
 				</li>
@@ -239,20 +231,29 @@
 				<li>
 					<h4><a name="chapter4-2-4">Import SAV</a></h4>
 					<p>
-						Allows the selection of a save file to use with the ROM image which is currently in the flash memory.
+						<p>
+							Allows the selection of a save file (<i>.sav</i>) to use with the ROM image which is currently in the flash memory.
+							<br>
+							The selected save file will substitute the one available for the current ROM image in the <tt>SAVE</tt> directory of the microSD card.
+							<br>
+						</p>
 
-						Allows to flash a Game Boy ROM image (a <i>.gb</i> file) from the ones available in the currently selected directory. <b>!NEEDS FACT-CHECKING!</b>
+						<p>
+							<em>NOTE:</em> Each ROM can have their own save file in the <tt>SAVE</tt> directory. The name of that save file is composed by the first 4 letters of the name in the ROM header, the ROM checksum value and the <i>.sav</i> extension.
+							<br>
+							So, if for example you have different versions of LSDj (or even the same version but with different sample banks loaded or custom mods), each one will have its own save file in the <tt>SAVE</tt> directory.
+						</p>
 
 						<ul>
 							<li><b>D-PAD</b> is used to select a save file.</li>
-							<li><b>A</b> overwrites the save file in the <tt>SAVE</tt> folder of the microSD with the one selected. </li>
-							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>A</b> overwrites the save file in the <tt>SAVE</tt> directory of the microSD with the one selected. </li>
+							<li><b>START</b> returns control to the main menu.</li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 					</p>
 					<div class="warning">
 						<h4>!!! WARNING !!!</h4>
-						In the SAVE folder on microSD you will find only a savefile for each ROM <b>!NEEDS FACT-CHECKING!</b>, which is the one that will be automatically loaded on boot (when you hit any key on the splash screen).
+						In the <tt>SAVE</tt> directory on microSD you will find only a savefile for each ROM <b>!NEEDS FACT-CHECKING!</b>, which is the one that will be automatically loaded on boot (when you hit any key on the splash screen).
 						<br>
 						That save file <b>will be overwritten</b>. It is advised to backup it on your PC before overwriting if it contains important data.
 					</div>
@@ -261,35 +262,33 @@
 						<h4>!!! TIP !!!</h4>
 						If you need only one version of LSDj for all your tracks in a liveset, you can store many different .sav files in the microSD and load them when needed without flashing the ROM image again.
 						<br>
-						But first <b>remember to back up your current save file in the SAVE folder</b> if you have some work in progress!
+						But first <b>remember to back up your current save file in the <tt>SAVE</tt> directory</b> if you have some work in progress!
 					</div>
 
 				</li>
 				
 				<li>
-					<h4><a name="chapter4-2-5">State File</a></h4> !NEEDS FACT-CHECKING!
+					<h4><a name="chapter4-2-5">State File</a></h4> <b>!NEEDS FACT-CHECKING!</b>
 					<p>
-						Allows the selection of a state file to use with the ROM image which is currently in the flash memory. !NEEDS FACT-CHECKING!
+						Allows the selection of a state file to use with the ROM image which is currently in the flash memory. <b>!NEEDS FACT-CHECKING!</b>
 
 						<ul>
 							<li><b>D-PAD</b> is used to select a state file.</li>
-							<li><b>A</b> !NEEDS FACT-CHECKING! </li>
+							<li><b>A</b> <b>!NEEDS FACT-CHECKING!</b> </li>
 							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 					</p>
 				</li>
 				
 				<li>
-					<h4><a name="chapter4-2-6">RTC File</a></h4> !NEEDS FACT-CHECKING!
+					<h4><a name="chapter4-2-6">RTC File</a></h4> <b>!NEEDS FACT-CHECKING!</b>
 					<p>
-						RTC files contain a simulated state for the internal real time clock of the cart (RTC).
+						This menu will be removed in future firmware versions because as of now it does nothing.
 
 						<ul>
-							<li><b>D-PAD</b> is used to select an RTC file.</li>
-							<li><b>A</b> !NEEDS FACT-CHECKING! </li>
 							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 					</p>
 				</li>
@@ -305,7 +304,7 @@
 							<li><b>D-PAD</b> is used to select a <i>.BEN</i> firmware file.</li>
 							<li><b>A</b> overwrites the current firmware in flash memory.</li>
 							<li><b>START</b> returns the control to the main menu.</li>
-							<li><b>B</b> returns to the splash screen. <b>!NEEDS FACT-CHECKING!</b></li>
+							<li><b>B</b> returns to the splash screen.</li>
 						</ul>
 
 						<div class="warning">
@@ -325,7 +324,7 @@
 								</li>
 							</ul>
 							<p>
-								In case the update fails and your ElCheapo is bricked, you can fix it by reflashing it with an external writer like the Joey (available <a href="https://bennvenn.myshopify.com/products/reader-writer-gen2?variant=51157011156">here</a>). 
+								In case the update fails and your ElCheapo is bricked, you can fix it by reflashing it with an external writer like the Joey (available <a href="https://bennvenn.myshopify.com/products/reader-writer-gen2?variant=51157011156">here</a>). Writers other than the Joey might work, but have not been tested.
 								<br>
 								If you don't have a Joey, you can <a href="#chapter7">ask Ben</a> to reflash your ElCheapo (you will have to provide for the shipping cost). 
 								<b>!NEEDS FACT-CHECKING!</b>
@@ -346,9 +345,13 @@
 <div>
 	<p>
 		To run the currently available ROM in flash memory using the save file in the <tt>SAVE</tt> directory of the microSD, hit any key (but <b>START</b> or <b>SELECT</b>) at the splash screen.
+		<br>
+		The Game Boy will reboot into the available ROM.
 	</p>
 	<p>
 		While the ROM is being executed, it is possible to update the corresponding save file in the <tt>SAVE</tt> directory of the microSD by <b>pushing and holding the ElCheapo button</b> on the back of the cartridge.
+		<br>
+		This will also reboot the Game Boy into the firmware's splash screen.
 	</p>
 	<p>
 		Some ROMs will support save states with the ElCheapo. A save state is a complete memory dump of the SRAM and the Game Boy RAM.
